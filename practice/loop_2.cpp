@@ -1,6 +1,8 @@
 #include <bits/stdc++.h>
 using namespace std;
 
+// time conversion
+
 string timeConversion(string s) {
 	if(s[0]=='1' && s[1]=='2' && (s.find("AM")) != string::npos) {
 		s.replace(0, 2, "00");
