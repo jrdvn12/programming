@@ -1,24 +1,31 @@
-#include <iostream>
+#include <bits/stdc++.h>
 using namespace std;
 
-void solve() {
-	int x, y;
-	int sum;
-	cin >> x;
-	cin >> y;
-	sum=x+y;
-	cout << sum << '\n';
+int birthdayCakeCandles(vector<int> candles) {
+	int max=1;
+	for(int i=0; i<candles.size(); i++) {
+		if(max<candles[i]) {
+			max = candles[i];
+		}
+	}
+	int count=0;
+	for(int j=0; j<candles.size(); j++) {
+		if(max==candles[j]) {
+			count++;
+		}
+	}
+	return count;
 }
 
 int main() {
-	ios::sync_with_stdio(0);
-	cin.tie(0);
+	vector<int> candles;
+	int n;
+	cin >> n;
 
-	int t, i=1;
-	cin >> t;
-	while(t--) {
-		cout << "Case #" << i << ": ";
-		solve();
-		i++;
+	for(int i=0; i<n; i++) {
+		int a;
+		cin >> a;
+		candles.push_back(a);
 	}
+	cout << birthdayCakeCandles(candles);
 }
