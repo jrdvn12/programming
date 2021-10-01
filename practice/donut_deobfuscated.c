@@ -1,16 +1,9 @@
 #include <stdio.h>
+#include <stdlib.h>
 
 int main(void) {
-	int n, i;
-	int sum=0;
-	scanf("%d", &n);
-	for(i=1; i<=n; i++) {
-		int res=1;
-		int j=i;
-		while(j--) {
-			res*=i;
-		}
-		sum+=res;
-	}
-	printf("%d\n", sum);
+	int n=1, n1=2, n2=3;
+	printf("%3d%3d%3d", n, n1, n2);
+
+	return 0;
 }

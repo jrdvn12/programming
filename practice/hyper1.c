@@ -1,10 +1,10 @@
 #include <stdio.h>
 
 int main(void) {
-	int n;
-	scanf("%d", &n);
-	while(n--) {
-		printf("Hello, World!\n");
+	for(int x=0; x<10; x++) {
+		for(int y=1; y<=5; y++) {
+			printf("%3d", x);
+		}
+		printf("\n");
 	}
-	return 0;
 }
