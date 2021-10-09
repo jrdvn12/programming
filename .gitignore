@@ -31,11 +31,9 @@
 *.out
 *.app
 
-# Vim undo files
-*.un~
-*.cpp~
-*.c~
-*.swp~
+# Vim temporary files
+*~
+*.swp
 
 # Text files
 *.txt
