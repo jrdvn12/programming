@@ -40,11 +40,11 @@ void insert() {
 	}
 }
 
-void delete(struct node *head) {
-	struct node *current = head;
-	struct node *prev = head;
+void delete(struct node **head) {
+	struct node *current = *head;
+	struct node *prev = *head;
 
-	if(isEmpty(head)) {
+	if(isEmpty(*head)) {
 		printf("\nThe list is empty.\n");
 		return;
 	}
@@ -54,7 +54,7 @@ void delete(struct node *head) {
 	scanf("%d", &pos);
 
 	if(pos==1) {
-		head=current->next;
+		*head=current->next;
 		free(current);
 		current=NULL;
 		printf("\nDeleted Successfully\n");
@@ -72,11 +72,11 @@ void delete(struct node *head) {
 }
 
 void display(struct node *head) {
-	struct node *dis = head;
 	if(isEmpty(head)) {
 		printf("\nThe list is empty.\n");
 		return;
 	} else {
+		struct node *dis = head;
 		int count=0;
 		printf("\n");
 		while(dis!=NULL) {
@@ -90,11 +90,11 @@ void display(struct node *head) {
 }
 
 void count(struct node *head) {
-	struct node *cnt = head;
 	if(isEmpty(head)) {
 		printf("\nThe list is empty.\n");
 		return;
 	} else {
+		struct node *cnt = head;
 		int count=0;
 		while(cnt!=NULL) {
 			count++;
@@ -124,7 +124,7 @@ int main() {
 				insert();
 				break;
 			case 2:
-				delete(head);
+				delete(&head);
 				break;
 			case 3:
 				display(head);
