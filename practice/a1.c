@@ -63,6 +63,10 @@ void delete(struct node **head) {
 			prev=current;
 			current=current->next;
 			pos--;
+			if(current == NULL) {
+				printf("\nInvalid Position\n");
+				return;
+			}
 		}
 		prev->next=current->next;
 		free(current);
